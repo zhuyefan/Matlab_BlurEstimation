@@ -1,55 +1,31 @@
 # Matlab_BlurEstimation
-MATLAB Compiler
+================   VQA readme file   ================
+The code contains 
+	BlurEstimation_selection_nS.m, 
+	BlurEstimation_selection_S.m, 
+	[gbvs] file folder, 
+	readme.txt, 
+	video_QA_demo_V1_VedioFileTest.m
+	BlurEstimation_section_S2.m
+	video_QA_demo_V1_VedioFileTest2.m
+----------------
+    BlurEstimation_selection_nS.m    -> without using saliency map to estimate blur
+    BlurEstimation_selection_S.m     -> using saliency map to estimate blur
+    BlurEstimation_section_S2.m   ->  using saliency map to estimate blur efficiently	(This is improvement of BlurEstimation_selection_S.m  )
+    [gbvs] file folder               -> gbps tool box to obtain the saliency map
+    Readme.txt                       -> readme
+    video_QA_demo_V1_VedioFileTest.m -> video quality assessment demo
+    video_QA_demo_V1_VedioFileTest2.m -> video quality assessment demo with opencv to solve Unsupported video style( HEVC video )
+----------------
+gbvs（Graph-Based Visual Saliency） is used to obtain the saliency map. First, you should do some preperations. Then, run video_QA_demo_V1_VideoFileTest.m 
 
-1. Prerequisites for Deployment 
+[Preperation]
+1. You should add the [gbvs]'s path to matlab default search path;
+    *** ! to use [gbvs] please refer to the readme file in [gbvs]
+2. Remember to edit the xxx/gbvs/util/mypath.mat which save the path of [gbvs], then save the path.
+    ***  like I:\VQA2018\DB_VQA_test\VQA_bin\VQA_achieved\gbvs
+3.If you need run video_QA_demo_V1_VedioFileTest2.m,  you should install mexopencv and opencv 
 
-. Verify the MATLAB Runtime is installed and ensure you    
-  have installed version 9.0.1 (R2016a).   
-
-. If the MATLAB Runtime is not installed, do the following:
-  (1) enter
-  
-      >>mcrinstaller
-      
-      at MATLAB prompt. The MCRINSTALLER command displays the 
-      location of the MATLAB Runtime installer.
-
-  (2) run the MATLAB Runtime installer.
-
-Or download the Windows 64-bit version of the MATLAB Runtime for R2016a 
-from the MathWorks Web site by navigating to
-
-   http://www.mathworks.com/products/compiler/mcr/index.html
-   
-   
-For more information about the MATLAB Runtime and the MATLAB Runtime installer, see 
-Package and Distribute in the MATLAB Compiler documentation  
-in the MathWorks Documentation Center.    
-
-
-NOTE: You will need administrator rights to run MCRInstaller. 
-
-
-2. Files to Deploy and Package
-
-Files to package for Standalone 
-================================
--video_QA_demo_V1_VideoFileTest2.exe
--MCRInstaller.exe 
-   -if end users are unable to download the MATLAB Runtime using the above  
-    link, include it when building your component by clicking 
-    the "Runtime downloaded from web" link in the Deployment Tool
--This readme file 
-
-3. Definitions
-
-For information on deployment terminology, go to 
-http://www.mathworks.com/help. Select MATLAB Compiler >   
-Getting Started > About Application Deployment > 
-Deployment Product Terms in the MathWorks Documentation 
-Center.
-
-
-
-
-
+[run]
+1. Change the video file path;
+2. Run video_QA_demo_V1_VideoFileTest.m or Run video_QA_demo_V1_VedioFileTest2.m  
